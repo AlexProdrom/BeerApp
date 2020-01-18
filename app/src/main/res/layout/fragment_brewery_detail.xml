@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="brewery"
+            type="com.acidapps.beerapp.data.Brewery" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.brewerydetail.BreweryDetailFragment">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:contentDescription="@string/content_description_brewery"
+            android:src="@drawable/brewery_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_brewery_address"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/big_margin"
+            android:layout_marginTop="@dimen/brewery_detail_address_marginTop"
+            android:text="@{`Address: `+óbrewery.city + `, `+ brewery.state + `, ` + brewery.country}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:visibleGone="@{brewery != null}"
+            tools:text="Address" />
+
+        <TextView
+            android:id="@+id/tv_brewery_type"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:text="@{`Type: `+óbrewery.type}"
+            app:layout_constraintStart_toStartOf="@+id/tv_brewery_address"
+            app:layout_constraintTop_toBottomOf="@+id/tv_brewery_address"
+            app:visibleGone="@{brewery != null}"
+            tools:text="Type" />
+
+        <Button
+            android:id="@+id/btn_brewery_phone"
+            android:layout_width="@dimen/brewery_detail_icon_size"
+            android:layout_height="@dimen/brewery_detail_icon_size"
+            android:layout_marginTop="@dimen/brewery_detail_icon_marginTop"
+            android:background="@drawable/ic_call"
+            app:layout_constraintEnd_toStartOf="@+id/btn_brewery_uri"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_brewery_type"
+            app:visibleGone="@{brewery != null}" />
+
+        <Button
+            android:id="@+id/btn_brewery_uri"
+            android:layout_width="@dimen/brewery_detail_icon_size"
+            android:layout_height="@dimen/brewery_detail_icon_size"
+            android:background="@drawable/ic_link"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_brewery_phone"
+            app:layout_constraintTop_toTopOf="@+id/btn_brewery_phone"
+            app:visibleGone="@{brewery != null}" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:visibleGone="@{brewery == null}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

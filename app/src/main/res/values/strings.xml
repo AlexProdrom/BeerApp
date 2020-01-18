@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BeerApp</string>
+    <string name="content_description_brewery">Brewery</string>
+    <string name="brewery_list_title">Breweries</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/breweryListFragment">
+    <fragment
+        android:id="@+id/breweryListFragment"
+        android:name="com.acidapps.beerapp.ui.brewerylist.BreweryListFragment"
+        tools:layout="@layout/fragment_brewery_list">
+        <action
+            android:id="@+id/action_breweryListFragment_to_breweryDetailFragment"
+            app:destination="@id/breweryDetailFragment"
+            app:popUpTo="@+id/breweryListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/breweryDetailFragment"
+        android:name="com.acidapps.beerapp.ui.brewerydetail.BreweryDetailFragment"
+        tools:layout="@layout/fragment_brewery_detail" >
+        <argument
+            android:name="breweryId"
+            app:argType="long" />
+    </fragment>
+</navigation>
