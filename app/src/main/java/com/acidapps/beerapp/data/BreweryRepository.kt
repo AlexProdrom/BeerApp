@@ -6,10 +6,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class BreweryRepository(private val breweryService: BreweryService) {
+class BreweryRepository(private val breweryService: BreweryService) : IBreweryRepository{
     val tag: String = BreweryRepository::class.java.name
 
-    fun retrieveBreweries(): MutableLiveData<List<Brewery>> {
+    override fun retrieveBreweries(): MutableLiveData<List<Brewery>> {
         val breweries = MutableLiveData<List<Brewery>>()
 
         breweryService.getBreweries().enqueue(object : Callback<List<Brewery>> {
@@ -25,7 +25,7 @@ class BreweryRepository(private val breweryService: BreweryService) {
         return breweries
     }
 
-    fun retrieveBrewery(breweryId: Int): MutableLiveData<Brewery?> {
+    override fun retrieveBrewery(breweryId: Int): MutableLiveData<Brewery?> {
         val brewery = MutableLiveData<Brewery?>()
 
         breweryService.getBrewery(breweryId.toString()).enqueue(object : Callback<Brewery> {

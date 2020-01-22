@@ -1,15 +1,18 @@
 package com.acidapps.beerapp
 
 import android.app.Application
-import android.content.Context
-import com.acidapps.beerapp.data.BreweryRepository
-import com.acidapps.beerapp.utils.InjectorUtils.provideBreweryService
-import com.acidapps.beerapp.utils.InjectorUtils.provideHttpClient
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
 
 class BeerApp : Application() {
-    val breweryRepository: BreweryRepository by lazy { provideBreweryRepository(applicationContext) }
+    override fun onCreate() {
+        super.onCreate()
 
-    private fun provideBreweryRepository(context: Context): BreweryRepository {
-        return BreweryRepository(provideBreweryService(provideHttpClient(context)))
+        startKoin{
+            androidLogger()
+            androidContext(this@BeerApp)
+            modules(appModule)
+        }
     }
 }

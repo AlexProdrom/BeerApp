@@ -43,3 +43,9 @@ i
 9app/src/main/java/com/acidapps/beerapp/utils/Constants.kt,e\5\e56eaec814678fab0422fcf787401a01e1b2b737
 a
 1app/src/main/java/com/acidapps/beerapp/BeerApp.kt,4\5\4516a1cbb0838da669b9d4ca68f1f47812825f7f
+r
+Bapp/src/test/java/com/acidapps/beerapp/BreweryListViewModelTest.kt,e\0\e087afc06a38781d7fc3577ead0a18672a2d12c9
+t
+Dapp/src/test/java/com/acidapps/beerapp/BreweryDetailViewModelTest.kt,e\2\e2a69f4b6d4fa6c6d81de63f8719d81067b665d6
+o
+?app/src/test/java/com/acidapps/beerapp/BreweryRepositoryTest.kt,1\3\1358838486cdb49341c66808cafed75902d850ea

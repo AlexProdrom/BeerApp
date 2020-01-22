@@ -7,23 +7,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
-import com.acidapps.beerapp.BeerApp
 import com.acidapps.beerapp.databinding.FragmentBreweryDetailBinding
 import com.acidapps.beerapp.ui.base.BaseFragment
-import com.acidapps.beerapp.utils.InjectorUtils.provideBreweryDetailViewModelFactory
+import org.koin.android.ext.android.getKoin
+import org.koin.android.viewmodel.ext.android.viewModel
+
 
 
 class BreweryDetailFragment : BaseFragment() {
     private lateinit var binding: FragmentBreweryDetailBinding
-    private val viewModel by viewModels<BreweryDetailViewModel> {
-        provideBreweryDetailViewModelFactory(
-            (requireActivity().application as BeerApp).breweryRepository,
-            args.breweryId.toInt()
-        )
-    }
+    private val viewModel by viewModel<BreweryDetailViewModel>()
     private val args: BreweryDetailFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -40,6 +35,8 @@ class BreweryDetailFragment : BaseFragment() {
     }
 
     private fun setBrewery() {
+        getKoin().setProperty("breweryId", args.breweryId.toInt())
+
         viewModel.getBrewery().observe(this, Observer {
             it?.name?.let { name -> updateActionBarTitle(name) }
             binding.brewery = it

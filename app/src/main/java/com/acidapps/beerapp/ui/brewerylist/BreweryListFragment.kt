@@ -5,19 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import com.acidapps.beerapp.BeerApp
 import com.acidapps.beerapp.R
 import com.acidapps.beerapp.databinding.FragmentBreweryListBinding
 import com.acidapps.beerapp.ui.base.BaseFragment
-import com.acidapps.beerapp.utils.InjectorUtils
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class BreweryListFragment : BaseFragment() {
     private lateinit var binding: FragmentBreweryListBinding
-    private val viewModel by viewModels<BreweryListViewModel> {
-        InjectorUtils.provideBreweryListViewModelFactory((requireActivity().application as BeerApp).breweryRepository)
-    }
+    private val viewModel by viewModel<BreweryListViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
