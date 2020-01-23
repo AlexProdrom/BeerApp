@@ -6,7 +6,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class BreweryRepository(private val breweryService: BreweryService) : IBreweryRepository{
+class BreweryRepository(private val breweryService: BreweryService) : IBreweryRepository {
     val tag: String = BreweryRepository::class.java.name
 
     override fun retrieveBreweries(): MutableLiveData<List<Brewery>> {

@@ -15,7 +15,6 @@ import org.koin.android.ext.android.getKoin
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
-
 class BreweryDetailFragment : BaseFragment() {
     private lateinit var binding: FragmentBreweryDetailBinding
     private val viewModel by viewModel<BreweryDetailViewModel>()
