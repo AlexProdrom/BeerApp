@@ -29,6 +29,6 @@ class BreweryListFragment : BaseFragment() {
     private fun setupBreweryList() {
         val adapter = BreweryAdapter()
         binding.breweryList.adapter = adapter
-        viewModel.getBreweries().observe(this, Observer { adapter.submitList(it) })
+        viewModel.breweries.observe(viewLifecycleOwner, Observer { adapter.submitList(it) })
     }
 }

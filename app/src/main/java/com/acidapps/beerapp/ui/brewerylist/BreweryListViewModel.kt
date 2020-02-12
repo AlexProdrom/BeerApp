@@ -1,10 +1,13 @@
 package com.acidapps.beerapp.ui.brewerylist
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.acidapps.beerapp.data.Brewery
+import androidx.lifecycle.liveData
 import com.acidapps.beerapp.data.IBreweryRepository
+import kotlinx.coroutines.Dispatchers
 
 class BreweryListViewModel(private val breweryRepository: IBreweryRepository) : ViewModel() {
-    fun getBreweries(): LiveData<List<Brewery>> = breweryRepository.retrieveBreweries()
+    val breweries = liveData(Dispatchers.IO) {
+        val breweries = breweryRepository.retrieveBreweries()
+        emit(breweries)
+    }
 }

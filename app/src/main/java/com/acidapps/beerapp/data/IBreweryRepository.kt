@@ -1,9 +1,7 @@
 package com.acidapps.beerapp.data
 
-import androidx.lifecycle.MutableLiveData
-
 interface IBreweryRepository {
-    fun retrieveBreweries(): MutableLiveData<List<Brewery>>
+    suspend fun retrieveBreweries(): List<Brewery>
 
-    fun retrieveBrewery(breweryId: Int): MutableLiveData<Brewery?>
+    suspend fun retrieveBrewery(breweryId: Int): Brewery
 }

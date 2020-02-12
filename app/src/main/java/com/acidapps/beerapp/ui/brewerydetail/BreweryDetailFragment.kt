@@ -36,7 +36,7 @@ class BreweryDetailFragment : BaseFragment() {
     private fun setBrewery() {
         getKoin().setProperty("breweryId", args.breweryId.toInt())
 
-        viewModel.getBrewery().observe(this, Observer {
+        viewModel.brewery.observe(viewLifecycleOwner, Observer {
             it?.name?.let { name -> updateActionBarTitle(name) }
             binding.brewery = it
         })

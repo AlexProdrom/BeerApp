@@ -15,14 +15,10 @@ Gapp/src/main/java/com/acidapps/beerapp/ui/brewerylist/BreweryAdapter.kt,1\b\1b
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-„
-Tapp/src/main/java/com/acidapps/beerapp/ui/brewerylist/BreweryListViewModelFactory.kt,a\3\a387bf7aa3ceb8d0c406afd6bf6d254fdba8258e
 }
 Mapp/src/main/java/com/acidapps/beerapp/ui/brewerylist/BreweryListViewModel.kt,2\0\20b3769e6bc5a41f55e1ea380249fafb7d501572
 |
 Lapp/src/main/java/com/acidapps/beerapp/ui/brewerylist/BreweryListFragment.kt,8\c\8c8e0711ced25efef2603d9c4b492f9b87d4a0d4
-m
-=app/src/main/java/com/acidapps/beerapp/utils/InjectorUtils.kt,f\1\f1db6d19783d5d6b1e478162fc6394d9eb861f9b
 a
 1app/src/main/res/layout/fragment_brewery_list.xml,b\7\b75c1dfc0465e3e37eb1ed5791dbe895b72a9152
 ]
@@ -33,8 +29,6 @@ m
 =app/src/main/java/com/acidapps/beerapp/data/BreweryService.kt,c\4\c4c65008e0ecc97365d504c3da8e36aeea2d7e10
 n
 >app/src/main/java/com/acidapps/beerapp/ui/base/BaseFragment.kt,7\e\7eb74de0007ddc5c8fad00780f516b8955e82c2e
-ˆ
-Xapp/src/main/java/com/acidapps/beerapp/ui/brewerydetail/BreweryDetailViewModelFactory.kt,c\c\cc925faa6f06f1b6d0e0f37dc01315d880bda2dc
 o
 ?app/src/main/java/com/acidapps/beerapp/utils/BindingAdapters.kt,b\8\b87ac062e2b6a53a41a6c498c8a1298b272949cb
 p
@@ -49,3 +43,9 @@ t
 Dapp/src/test/java/com/acidapps/beerapp/BreweryDetailViewModelTest.kt,e\2\e2a69f4b6d4fa6c6d81de63f8719d81067b665d6
 o
 ?app/src/test/java/com/acidapps/beerapp/BreweryRepositoryTest.kt,1\3\1358838486cdb49341c66808cafed75902d850ea
+q
+Aapp/src/main/java/com/acidapps/beerapp/data/IBreweryRepository.kt,9\9\99a350d9d94db2e5a30afb744e8f43be40c457ad
+c
+3app/src/main/java/com/acidapps/beerapp/AppModule.kt,1\1\11f9a9adae434ee9a7c5b05371b4593300a6e8bb
+o
+?app/src/main/java/com/acidapps/beerapp/utils/WebServiceUtils.kt,8\9\8955afeda87b34e581fa3dd2815f2f3a04ab53b1
